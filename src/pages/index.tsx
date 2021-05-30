@@ -9,6 +9,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Image from "next/image";
 import { calculateAge } from "../utils/CalculateAge";
 import Projects from "../components/Projects";
+import FormContact from "../components/FormContact";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -79,6 +80,8 @@ export default function Home() {
         <AboutMe />
 
         <Projects />
+
+        <FormContact />
       </Layout>
     </>
   );

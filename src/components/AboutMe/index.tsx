@@ -29,24 +29,25 @@ export default function AboutMe() {
 
   return (
     <GridContainer>
-      <Grid item xs={12} sm={6}>
-        <Box display="flex" justifyContent="center">
-          <img
-            src="/hiHuman.svg"
-            alt="monstrinho rosa"
-            className={classes.hiHuman}
-          />
-        </Box>
-      </Grid>
       <Grid item xs={12} sm={6} style={{ display: "flex" }}>
         <Box display="flex" justifyContent="center" flexDirection="column">
           <Typography variant="h1" component="h2" className={classes.title}>
-            Hi, Human!
+            About me!
           </Typography>
           <Typography variant="body1" className={classes.description}>
-            `Hi my name is Ana and I'm {myAge} anos bajisdjfisjdfjsd
-            hsdfhusdhfusdh fhsdufsdhfsdh hfudhfu`
+            `Hi my name is Ana and I'm {myAge} anos is simply dummy text of the
+            printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown
+            printer took a galley is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's standard
+            dummy text ever since the 1500s, when an unknown printer took a
+            galley
           </Typography>
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Box display="flex" justifyContent="center">
+          <img src="" width="480" height="480" />
         </Box>
       </Grid>
     </GridContainer>

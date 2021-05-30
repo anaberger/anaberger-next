@@ -20,37 +20,19 @@ export default function Projects() {
   const classes = useStyles();
 
   return (
-    <>
-      <GridContainer spacing={5}>
-        <Grid item xs={12} sm={3}>
-          <Card className={classes.root}>
-            <CardContent>
-              <h1>oi</h1>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <Card className={classes.root}>
-            <CardContent>
-              <h1>oi</h1>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <Card className={classes.root}>
-            <CardContent>
-              <h1>oi</h1>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <Card className={classes.root}>
-            <CardContent>
-              <h1>oi</h1>
-            </CardContent>
-          </Card>
-        </Grid>
-      </GridContainer>
-    </>
+    <GridContainer>
+      <Grid item xs={12} sm={6}>
+        <Box display="flex" justifyContent="center">
+          <img src="" width="480" height="480" />
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={6} style={{ display: "flex" }}>
+        <Box display="flex" justifyContent="center" flexDirection="column">
+          <Typography variant="h1" component="h2">
+            My Projects
+          </Typography>
+        </Box>
+      </Grid>
+    </GridContainer>
   );
 }
