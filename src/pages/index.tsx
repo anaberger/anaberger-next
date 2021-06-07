@@ -3,18 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Box, Card, Container, Grid, Typography } from "@material-ui/core";
 import Head from "next/head";
 import Layout from "../components/Layout";
-import AboutMe from "../components/AboutMe";
 import ParticlesStyled from "../components/ParticlesStyled";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Image from "next/image";
-import { calculateAge } from "../utils/CalculateAge";
-import Projects from "../components/Projects";
-import FormContact from "../components/FormContact";
+import NewLayout from "../components/NewLayout";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontSize: 30,
+    fontSize: 20,
     textAlign: "center",
+    marginTop: 20,
   },
   profession: {
     textAlign: "center",
@@ -31,13 +28,14 @@ const useStyles = makeStyles((theme) => ({
   hiHuman: {
     width: 300,
   },
+  lista: {
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
 
-export default function Home() {
+export default function HomePage() {
   const classes = useStyles();
-  const [age, setAge] = useState();
-
-  const myAge = calculateAge();
 
   return (
     <>
@@ -48,7 +46,7 @@ export default function Home() {
         />
       </Head>
 
-      <Layout>
+      <NewLayout>
         <Box position="relative">
           <ParticlesStyled />
           <Box
@@ -61,28 +59,62 @@ export default function Home() {
             alignItems="center"
             justifyContent="center"
           >
-            <Box>
-              <Box display="flex" justifyContent="center">
-                <img
-                  src="/alien2.svg"
-                  alt="logo-site"
-                  style={{ width: "70px" }}
-                />
-              </Box>
+            <Box width="50%">
+              <Box display="flex" justifyContent="center"></Box>
               <Typography variant="h1" component="h2" className={classes.title}>
-                anaberger.com
+                is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived
+                not only five centuries.
               </Typography>
-              <Typography className={classes.profession}>Front-End</Typography>
+
+              <Box>
+                <Typography
+                  variant="h1"
+                  component="h2"
+                  className={classes.title}
+                >
+                  Skills
+                </Typography>
+                <ul>
+                  <li>baaaaaa</li>
+                  <li>baaaaaa</li>
+                  <li>baaaaaa</li>
+                  <li>baaaaaa</li>
+                  <li>baaaaaa</li>
+                </ul>
+              </Box>
+
+              <Box>
+                <ul className={classes.lista}>
+                  <li>
+                    <img
+                      src="github.svg"
+                      alt="logo github"
+                      style={{ width: "50px" }}
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="linkedin.svg"
+                      alt="logo linkedin"
+                      style={{ width: "50px" }}
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="cloud.svg"
+                      alt="download curriculo"
+                      style={{ width: "50px" }}
+                    />
+                  </li>
+                </ul>
+              </Box>
             </Box>
           </Box>
         </Box>
-
-        <AboutMe />
-
-        <Projects />
-
-        <FormContact />
-      </Layout>
+      </NewLayout>
     </>
   );
 }
