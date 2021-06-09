@@ -58,13 +58,13 @@ export default function FormContact() {
       data: values,
     };
     let result;
-    try {
-      const response = await axios(config);
+    // try {
+    //   const response = await axios(config);
 
-      console.log(response);
-    } catch (e) {
-      result = e.Message;
-    }
+    //   console.log(response);
+    // } catch (e) {
+    //   result = e.Message;
+    // }
   }, []);
 
   return (

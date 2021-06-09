@@ -18,6 +18,8 @@
     "react-dom": "17.0.1",
     "react-hook-form": "^7.7.1",
     "react-particles-js": "^3.4.1",
+    "react-spring": "^9.2.2",
+    "use-3d-effect": "^1.1.0",
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {

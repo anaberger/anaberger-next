@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Box, Card, Container, Grid, Typography } from "@material-ui/core";
 import Head from "next/head";
@@ -6,12 +6,16 @@ import Layout from "../components/Layout";
 import ParticlesStyled from "../components/ParticlesStyled";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import NewLayout from "../components/NewLayout";
+import { animated } from "react-spring";
+import { use3dEffect } from "use-3d-effect";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: "center",
     marginTop: 20,
+    color: "#d100d1",
+    marginBottom: 30,
   },
   profession: {
     textAlign: "center",
@@ -32,10 +36,21 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
+  img: {
+    width: 200,
+  },
 }));
 
 export default function HomePage() {
   const classes = useStyles();
+  const [isActive, setActive] = useState<boolean>(false);
+  const ref = useRef(null);
+
+  const { style, ...mouseHandlers } = use3dEffect(ref);
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <>
@@ -60,56 +75,43 @@ export default function HomePage() {
             justifyContent="center"
           >
             <Box width="50%">
-              <Box display="flex" justifyContent="center"></Box>
-              <Typography variant="h1" component="h2" className={classes.title}>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived
-                not only five centuries.
-              </Typography>
-
-              <Box>
-                <Typography
-                  variant="h1"
-                  component="h2"
-                  className={classes.title}
-                >
-                  Skills
-                </Typography>
-                <ul>
-                  <li>baaaaaa</li>
-                  <li>baaaaaa</li>
-                  <li>baaaaaa</li>
-                  <li>baaaaaa</li>
-                  <li>baaaaaa</li>
-                </ul>
+              <Box display="flex" justifyContent="center">
+                <img
+                  src="/contact-alien.svg"
+                  alt="Foto de Ana Laura Berger"
+                  style={{ width: "200px" }}
+                  className={isActive ? "active" : null}
+                  onClick={handleToggle}
+                />
               </Box>
 
-              <Box>
-                <ul className={classes.lista}>
-                  <li>
-                    <img
-                      src="github.svg"
-                      alt="logo github"
-                      style={{ width: "50px" }}
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="linkedin.svg"
-                      alt="logo linkedin"
-                      style={{ width: "50px" }}
-                    />
-                  </li>
-                  <li>
-                    <img
-                      src="cloud.svg"
-                      alt="download curriculo"
-                      style={{ width: "50px" }}
-                    />
-                  </li>
-                </ul>
+              <Box
+                display="flex"
+                justifyContent="center"
+                marginTop={20}
+                flexDirection="column"
+              >
+                <animated.div
+                  ref={ref}
+                  style={{
+                    color: "white",
+                    padding: "2em",
+                    ...style,
+                  }}
+                  {...mouseHandlers}
+                >
+                  <Typography className={classes.title}>
+                    {" "}
+                    {`< Whos is Ana? />`}
+                  </Typography>
+                </animated.div>
+                <Typography>
+                  is simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived
+                  not only five centuries, but also the leap into electronic
+                </Typography>
               </Box>
             </Box>
           </Box>
