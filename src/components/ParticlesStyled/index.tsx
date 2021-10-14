@@ -9,7 +9,7 @@ export default function ParticlesStyled() {
       }}
     >
       <Particles
-        height={window.outerHeight}
+        height="100vh"
         params={{
           particles: {
             number: {

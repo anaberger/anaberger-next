@@ -133,8 +133,8 @@ export default function HomePage() {
               alignItems="center"
               justifyContent="center"
             >
-              <Box width="50%" marginTop={10}>
-                <Box display="flex" justifyContent="center" position="relative">
+              <Box width="50%">
+                {/* <Box display="flex" justifyContent="center" position="relative">
                   <button
                     className={clsx(classes.buttonAlien, {
                       [classes.active]: open,
@@ -151,7 +151,7 @@ export default function HomePage() {
                   <div
                     className={clsx(classes.lightBeam, open && classes.hide)}
                   ></div>
-                </Box>
+                </Box> */}
 
                 <Box
                   display="flex"
@@ -171,7 +171,7 @@ export default function HomePage() {
                   >
                     <Typography className={classes.title}>
                       {" "}
-                      {`< Whos is Ana? />`}
+                      {`<About>`}
                     </Typography>
                   </animated.div>
                   <Typography className={classes.aboutMe}>
@@ -182,6 +182,26 @@ export default function HomePage() {
                     book. It has survived not only five centuries, but also the
                     leap into electronic
                   </Typography>
+                </Box>
+                <animated.div
+                  ref={ref}
+                  style={{
+                    color: "white",
+
+                    ...style,
+                  }}
+                  {...mouseHandlers}
+                >
+                  <Typography className={classes.title}>
+                    {" "}
+                    {`<Follow me>`}
+                  </Typography>
+                </animated.div>
+                <Box display="flex" justifyContent="space-evenly" marginTop={5}>
+                  <img src="/git.png" width={50} alt="" srcset="" />
+                  <img src="/linkedin.png" width={50} alt="" srcset="" />
+                  <img src="/instagram.png" width={50} alt="" srcset="" />
+                  <img src="/twitter.png" width={50} alt="" srcset="" />
                 </Box>
               </Box>
             </Box>
