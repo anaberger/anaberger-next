@@ -96,6 +96,7 @@ export default function MiniDrawer() {
           })}
         >
           <Toolbar>
+            <img src="/alien3.svg" width={45} marginLeft={12} alt="" />
             <Typography variant="h6" noWrap>
               anaberger.com
             </Typography>

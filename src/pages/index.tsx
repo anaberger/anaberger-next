@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
-import clsx from "clsx";
+import React, { useRef, useState } from "react";
 
-import { Box, Card, Container, Grid, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import Head from "next/head";
-import Layout from "../components/Layout";
 import ParticlesStyled from "../components/ParticlesStyled";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import NewLayout from "../components/NewLayout";
 import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+
+const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -80,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
 
     zIndex: -1,
     opacity: 0.5,
+  },
+  imgIcons: {
+    marginRight: 30,
   },
 }));
 
@@ -175,12 +178,22 @@ export default function HomePage() {
                     </Typography>
                   </animated.div>
                   <Typography className={classes.aboutMe}>
-                    is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the industry's standard dummy
-                    text ever since the 1500s, when an unknown printer took a
-                    galley of type and scrambled it to make a type specimen
-                    book. It has survived not only five centuries, but also the
-                    leap into electronic
+                    <ListItem button>
+                      👻
+                      <ListItemText primary=" My name is ana blablablbalball hfdhfuedh hdfhfdu" />
+                    </ListItem>
+                    <ListItem button>
+                      👩‍💻
+                      <ListItemText primary=" Js, React, Next, Git, Material Ui " />
+                    </ListItem>
+                    <ListItem button>
+                      💼
+                      <ListItemText primary=" I work balaikakd sidjsidjs shuhd " />
+                    </ListItem>
+                    <ListItem button>
+                      💁‍♀️
+                      <ListItemText primary=" I work balaikakd sidjsidjs shuhd " />
+                    </ListItem>
                   </Typography>
                 </Box>
                 <animated.div
@@ -197,11 +210,15 @@ export default function HomePage() {
                     {`<Follow me>`}
                   </Typography>
                 </animated.div>
-                <Box display="flex" justifyContent="space-evenly" marginTop={5}>
-                  <img src="/git.png" width={50} alt="" srcset="" />
-                  <img src="/linkedin.png" width={50} alt="" srcset="" />
-                  <img src="/instagram.png" width={50} alt="" srcset="" />
-                  <img src="/twitter.png" width={50} alt="" srcset="" />
+                <Box display="flex" justifyContent="center" marginTop={5}>
+                  {arrayIcons.map((icon) => (
+                    <img
+                      className={classes.imgIcons}
+                      src={`/${icon}.png`}
+                      width={50}
+                      alt="logo git"
+                    />
+                  ))}
                 </Box>
               </Box>
             </Box>
