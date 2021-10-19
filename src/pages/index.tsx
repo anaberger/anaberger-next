@@ -10,6 +10,8 @@ import { use3dEffect } from "use-3d-effect";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
+const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
+
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 30,
@@ -78,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
 
     zIndex: -1,
     opacity: 0.5,
+  },
+  imgIcons: {
+    marginRight: 30,
   },
 }));
 
@@ -205,11 +210,15 @@ export default function HomePage() {
                     {`<Follow me>`}
                   </Typography>
                 </animated.div>
-                <Box display="flex" justifyContent="space-evenly" marginTop={5}>
-                  <img src="/git.png" width={50} alt="logo git" />
-                  <img src="/linkedin.png" width={50} alt="logo linkedin" />
-                  <img src="/instagram.png" width={50} alt="logo instagram" />
-                  <img src="/twitter.png" width={50} alt="logo twitter" />
+                <Box display="flex" justifyContent="center" marginTop={5}>
+                  {arrayIcons.map((icon) => (
+                    <img
+                      className={classes.imgIcons}
+                      src={`/${icon}.png`}
+                      width={50}
+                      alt="logo git"
+                    />
+                  ))}
                 </Box>
               </Box>
             </Box>
