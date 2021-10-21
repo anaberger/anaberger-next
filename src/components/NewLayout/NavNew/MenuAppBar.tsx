@@ -76,6 +76,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  imgIcon: {
+    marginLeft: 10,
+  },
 }));
 
 export default function MiniDrawer() {
@@ -96,10 +99,15 @@ export default function MiniDrawer() {
           })}
         >
           <Toolbar>
-            <img src="/alien3.svg" width={45} marginLeft={12} alt="" />
             <Typography variant="h6" noWrap>
               anaberger.com
             </Typography>
+            <img
+              src="/alien3.svg"
+              width={45}
+              alt=""
+              className={classes.imgIcon}
+            />
 
             <FormGroup className={classes.formDarkMode}>
               <FormControlLabel
