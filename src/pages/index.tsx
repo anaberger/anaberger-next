@@ -177,24 +177,21 @@ export default function HomePage() {
                       {`<About>`}
                     </Typography>
                   </animated.div>
-                  <Typography className={classes.aboutMe}>
+
+                  <Box margin="auto">
                     <ListItem button>
-                      👻
-                      <ListItemText primary=" My name is ana blablablbalball hfdhfuedh hdfhfdu" />
+                      <ListItemText primary="👻 My name is ana blablablbalball hfdhfuedh hdfhfdu" />
                     </ListItem>
                     <ListItem button>
-                      👩‍💻
-                      <ListItemText primary=" Js, React, Next, Git, Material Ui " />
+                      <ListItemText primary="👩‍💻 Js, React, Next, Git, Material Ui " />
                     </ListItem>
                     <ListItem button>
-                      💼
-                      <ListItemText primary=" I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💼 I work balaikakd sidjsidjs shuhd " />
                     </ListItem>
                     <ListItem button>
-                      💁‍♀️
-                      <ListItemText primary=" I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💁‍♀️ I work balaikakd sidjsidjs shuhd " />
                     </ListItem>
-                  </Typography>
+                  </Box>
                 </Box>
                 <animated.div
                   ref={ref}
