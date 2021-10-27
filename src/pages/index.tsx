@@ -9,6 +9,7 @@ import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import { calculateAge } from "../utils/CalculateAge";
 
 const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
 
@@ -91,6 +92,7 @@ export default function HomePage() {
   const [isActive, setActive] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(true);
   const ref = useRef(null);
+  const myAge = calculateAge();
 
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
@@ -180,16 +182,18 @@ export default function HomePage() {
 
                   <Box margin="auto">
                     <ListItem button>
-                      <ListItemText primary="👻 My name is ana blablablbalball hfdhfuedh hdfhfdu" />
+                      <ListItemText
+                        primary={`👻 Hi, my names is Ana! I'm ${myAge} years old and a I have a cat called name is Morgana`}
+                      />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="👩‍💻 Js, React, Next, Git, Material Ui " />
+                      <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💼 I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💼 I'm instructor JavaScript and front-end developer" />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💁‍♀️ I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💁‍♀️ I love cats, coffee and drinking wine is my predilect hobby. " />
                     </ListItem>
                   </Box>
                 </Box>
