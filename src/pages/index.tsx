@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { FC } from "react";
 
 import { Box, Typography } from "@material-ui/core";
 import Head from "next/head";
@@ -9,6 +10,7 @@ import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import { calculateAge } from "../utils/CalculateAge";
 
 const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
 
@@ -86,11 +88,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HomePage() {
+const HomePage: FC = () => {
   const classes = useStyles();
   const [isActive, setActive] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(true);
   const ref = useRef(null);
+  const myAge = calculateAge();
 
   const { style, ...mouseHandlers } = use3dEffect(ref);
 
@@ -180,16 +183,18 @@ export default function HomePage() {
 
                   <Box margin="auto">
                     <ListItem button>
-                      <ListItemText primary="👻 My name is ana blablablbalball hfdhfuedh hdfhfdu" />
+                      <ListItemText
+                        primary={`👻 Hi, my name is Ana! I'm ${myAge} years old and I have a cat called Morgana`}
+                      />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="👩‍💻 Js, React, Next, Git, Material Ui " />
+                      <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💼 I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💼 I'm JavaScript instructor and front-end developer" />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💁‍♀️ I work balaikakd sidjsidjs shuhd " />
+                      <ListItemText primary="💁‍♀️ I love cats, coffee and my favorite hobby is drinking wine" />
                     </ListItem>
                   </Box>
                 </Box>
@@ -224,4 +229,6 @@ export default function HomePage() {
       </NewLayout>
     </>
   );
-}
+};
+
+export default HomePage;
