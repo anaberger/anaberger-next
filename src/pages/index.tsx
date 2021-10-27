@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { FC } from "react";
 
 import { Box, Typography } from "@material-ui/core";
 import Head from "next/head";
@@ -87,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HomePage() {
+const HomePage: FC = () => {
   const classes = useStyles();
   const [isActive, setActive] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(true);
@@ -183,17 +184,17 @@ export default function HomePage() {
                   <Box margin="auto">
                     <ListItem button>
                       <ListItemText
-                        primary={`👻 Hi, my names is Ana! I'm ${myAge} years old and a I have a cat called name is Morgana`}
+                        primary={`👻 Hi, my name is Ana! I'm ${myAge} years old and I have a cat called Morgana`}
                       />
                     </ListItem>
                     <ListItem button>
                       <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💼 I'm instructor JavaScript and front-end developer" />
+                      <ListItemText primary="💼 I'm JavaScript instructor and front-end developer" />
                     </ListItem>
                     <ListItem button>
-                      <ListItemText primary="💁‍♀️ I love cats, coffee and drinking wine is my predilect hobby. " />
+                      <ListItemText primary="💁‍♀️ I love cats, coffee and my favorite hobby is drinking wine" />
                     </ListItem>
                   </Box>
                 </Box>
@@ -228,4 +229,6 @@ export default function HomePage() {
       </NewLayout>
     </>
   );
-}
+};
+
+export default HomePage;
