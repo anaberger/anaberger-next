@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 30,
   },
 }));
+
 const Social: FC = () => {
   const classes = useStyles();
 

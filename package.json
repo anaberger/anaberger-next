@@ -5,16 +5,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check-types": "tsc", 
+    "test": "jest" 
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
     "express": "^4.17.1",
+    "jest": "^27.3.1",
     "next": "10.0.7",
     "nodemailer": "^6.6.1",
     "react": "17.0.1",
@@ -22,6 +28,7 @@
     "react-hook-form": "^7.7.1",
     "react-particles-js": "^3.4.1",
     "react-spring": "^9.2.2",
+    "ts-jest": "^27.0.7",
     "use-3d-effect": "^1.1.0",
     "use-dark-mode": "^2.3.1"
   },
