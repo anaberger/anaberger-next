@@ -86,7 +86,7 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const { value: isDark, toggle: toggleDarkMode } = useDarkMode();
+  const { value: isDark, toggle: toggleDarkMode } = useDarkMode(false);
 
   return (
     <>

@@ -8,9 +8,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import NewLayout from "../components/NewLayout";
 import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import { calculateAge } from "../utils/CalculateAge";
+import AboutMe from "../components/AboutMe";
 
 const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
 
@@ -21,31 +20,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 60,
     color: "#d100d1",
     marginBottom: 30,
-  },
-  aboutMe: {
-    textAlign: "center",
-  },
-  profession: {
-    textAlign: "center",
-  },
-  gridContainer: {
-    marginTop: 100,
-    padding: 50,
-    width: "100%",
-  },
-  description: {
-    marginTop: 20,
-    textAlign: "center",
-  },
-  hiHuman: {
-    width: 300,
-  },
-  lista: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  img: {
-    width: 200,
   },
   active: {
     transition: "200ms",
@@ -159,45 +133,8 @@ const HomePage: FC = () => {
                   ></div>
                 </Box> */}
 
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  flexDirection="column"
-                  width="80%"
-                  margin="auto"
-                >
-                  <animated.div
-                    ref={ref}
-                    style={{
-                      color: "white",
+                <AboutMe />
 
-                      ...style,
-                    }}
-                    {...mouseHandlers}
-                  >
-                    <Typography className={classes.title}>
-                      {" "}
-                      {`<About>`}
-                    </Typography>
-                  </animated.div>
-
-                  <Box margin="auto">
-                    <ListItem button>
-                      <ListItemText
-                        primary={`👻 Hi, my name is Ana! I'm ${myAge} years old and I have a cat called Morgana`}
-                      />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="💼 I'm JavaScript instructor and front-end developer" />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="💁‍♀️ I love cats, coffee and my favorite hobby is drinking wine" />
-                    </ListItem>
-                  </Box>
-                </Box>
                 <animated.div
                   ref={ref}
                   style={{

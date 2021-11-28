@@ -13,7 +13,7 @@ const darkPalette = {
     light: "#000000",
   },
   secondary: {
-    main: "#ff0000",
+    main: "#000",
   },
   background: {
     default: "#000000",
