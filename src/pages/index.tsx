@@ -1,52 +1,17 @@
 import React, { useRef, useState } from "react";
 import { FC } from "react";
 
-import { Box, Typography } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import Head from "next/head";
 import ParticlesStyled from "../components/ParticlesStyled";
 import { makeStyles } from "@material-ui/core/styles";
 import NewLayout from "../components/NewLayout";
-import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import { calculateAge } from "../utils/CalculateAge";
-
-const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
+import AboutMe from "../components/AboutMe";
+import Social from "../components/Social";
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    fontSize: 30,
-    textAlign: "center",
-    marginTop: 60,
-    color: "#d100d1",
-    marginBottom: 30,
-  },
-  aboutMe: {
-    textAlign: "center",
-  },
-  profession: {
-    textAlign: "center",
-  },
-  gridContainer: {
-    marginTop: 100,
-    padding: 50,
-    width: "100%",
-  },
-  description: {
-    marginTop: 20,
-    textAlign: "center",
-  },
-  hiHuman: {
-    width: 300,
-  },
-  lista: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  img: {
-    width: 200,
-  },
   active: {
     transition: "200ms",
     transform: "translateY(3rem)",
@@ -82,9 +47,6 @@ const useStyles = makeStyles((theme) => ({
 
     zIndex: -1,
     opacity: 0.5,
-  },
-  imgIcons: {
-    marginRight: 30,
   },
 }));
 
@@ -159,69 +121,8 @@ const HomePage: FC = () => {
                   ></div>
                 </Box> */}
 
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  flexDirection="column"
-                  width="80%"
-                  margin="auto"
-                >
-                  <animated.div
-                    ref={ref}
-                    style={{
-                      color: "white",
-
-                      ...style,
-                    }}
-                    {...mouseHandlers}
-                  >
-                    <Typography className={classes.title}>
-                      {" "}
-                      {`<About>`}
-                    </Typography>
-                  </animated.div>
-
-                  <Box margin="auto">
-                    <ListItem button>
-                      <ListItemText
-                        primary={`👻 Hi, my name is Ana! I'm ${myAge} years old and I have a cat called Morgana`}
-                      />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="💼 I'm JavaScript instructor and front-end developer" />
-                    </ListItem>
-                    <ListItem button>
-                      <ListItemText primary="💁‍♀️ I love cats, coffee and my favorite hobby is drinking wine" />
-                    </ListItem>
-                  </Box>
-                </Box>
-                <animated.div
-                  ref={ref}
-                  style={{
-                    color: "white",
-
-                    ...style,
-                  }}
-                  {...mouseHandlers}
-                >
-                  <Typography className={classes.title}>
-                    {" "}
-                    {`<Follow me>`}
-                  </Typography>
-                </animated.div>
-                <Box display="flex" justifyContent="center" marginTop={5}>
-                  {arrayIcons.map((icon) => (
-                    <img
-                      className={classes.imgIcons}
-                      src={`/${icon}.png`}
-                      width={50}
-                      alt="logo git"
-                    />
-                  ))}
-                </Box>
+                <AboutMe />
+                <Social />
               </Box>
             </Box>
           </div>

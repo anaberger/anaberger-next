@@ -1,55 +1,68 @@
-import { Box, Grid, Typography } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useRef } from "react";
+import { FC } from "react";
+
+import { Box, ListItemText, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { calculateAge } from "../../utils/CalculateAge";
-import GridContainer from "../GridContainer";
+import { animated } from "react-spring";
+import { use3dEffect } from "use-3d-effect";
+import ListItem from "@material-ui/core/ListItem";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 30,
     textAlign: "center",
-  },
-
-  gridContainer: {
-    marginTop: 100,
-    padding: 50,
-    width: "100%",
-  },
-  description: {
-    marginTop: 20,
-    textAlign: "center",
-  },
-  hiHuman: {
-    width: 300,
+    marginTop: 60,
+    color: "#d100d1",
+    marginBottom: 30,
   },
 }));
-export default function AboutMe() {
+const AboutMe: FC = () => {
   const classes = useStyles();
+  const ref = useRef(null);
   const myAge = calculateAge();
 
+  const { style, ...mouseHandlers } = use3dEffect(ref);
+
   return (
-    <GridContainer>
-      <Grid item xs={12} sm={6} style={{ display: "flex" }}>
-        <Box display="flex" justifyContent="center" flexDirection="column">
-          <Typography variant="h1" component="h2" className={classes.title}>
-            About me!
-          </Typography>
-          <Typography variant="body1" className={classes.description}>
-            `Hi my name is Ana and I'm {myAge} anos is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown printer took a
-            galley
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        <Box display="flex" justifyContent="center">
-          <img src="" width="480" height="480" />
-        </Box>
-      </Grid>
-    </GridContainer>
+    <Box
+      display="flex"
+      justifyContent="center"
+      flexDirection="column"
+      width="80%"
+      margin="auto"
+    >
+      <animated.div
+        ref={ref}
+        style={{
+          color: "white",
+
+          ...style,
+        }}
+        {...mouseHandlers}
+      >
+        <Typography className={classes.title}> {`<About>`}</Typography>
+      </animated.div>
+
+      <Box margin="auto">
+        <ListItem button>
+          <ListItemText
+            primary={`👻 Hi, my name is Ana! I'm ${myAge} years old and I have a cat called Morgana`}
+          />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="👩‍💻 I work with Js, React, Next, Git, Material Ui, CSS3, HTML5 " />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="💼 I'm JavaScript instructor and front-end developer" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="💁‍♀️ I love cats, coffee and my favorite hobby is drinking wine" />
+        </ListItem>
+      </Box>
+    </Box>
   );
-}
+};
+
+export default AboutMe;
