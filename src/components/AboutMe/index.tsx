@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { FC } from "react";
 
-import { Box, Grid, ListItemText, Typography } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Box, ListItemText, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { calculateAge } from "../../utils/CalculateAge";
 import { animated } from "react-spring";

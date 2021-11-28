@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
+import { FC } from "react";
 
-import { Box, Container, Grid } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Container, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import MenuAppBarNew from "./NavNew/MenuAppBar";
 
@@ -24,9 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NewLayout({ children }: LayoutProps) {
+const NewLayout: FC = ({ children }: LayoutProps) => {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
     <Grid className={classes.root}>
@@ -34,4 +34,6 @@ export default function NewLayout({ children }: LayoutProps) {
       <Container className={classes.containerLayout}>{children}</Container>
     </Grid>
   );
-}
+};
+
+export default NewLayout;

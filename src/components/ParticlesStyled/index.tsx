@@ -1,6 +1,7 @@
 import Particles from "react-particles-js";
+import { FC } from "react";
 
-export default function ParticlesStyled() {
+const ParticlesStyled: FC = () => {
   return (
     <div
       style={{
@@ -68,4 +69,6 @@ export default function ParticlesStyled() {
       />
     </div>
   );
-}
+};
+
+export default ParticlesStyled;

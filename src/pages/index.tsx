@@ -1,26 +1,17 @@
 import React, { useRef, useState } from "react";
 import { FC } from "react";
 
-import { Box, Typography } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import Head from "next/head";
 import ParticlesStyled from "../components/ParticlesStyled";
 import { makeStyles } from "@material-ui/core/styles";
 import NewLayout from "../components/NewLayout";
-import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 import { calculateAge } from "../utils/CalculateAge";
 import AboutMe from "../components/AboutMe";
-
-const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
+import Social from "../components/Social";
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    fontSize: 30,
-    textAlign: "center",
-    marginTop: 60,
-    color: "#d100d1",
-    marginBottom: 30,
-  },
   active: {
     transition: "200ms",
     transform: "translateY(3rem)",
@@ -56,9 +47,6 @@ const useStyles = makeStyles((theme) => ({
 
     zIndex: -1,
     opacity: 0.5,
-  },
-  imgIcons: {
-    marginRight: 30,
   },
 }));
 
@@ -134,31 +122,7 @@ const HomePage: FC = () => {
                 </Box> */}
 
                 <AboutMe />
-
-                <animated.div
-                  ref={ref}
-                  style={{
-                    color: "white",
-
-                    ...style,
-                  }}
-                  {...mouseHandlers}
-                >
-                  <Typography className={classes.title}>
-                    {" "}
-                    {`<Follow me>`}
-                  </Typography>
-                </animated.div>
-                <Box display="flex" justifyContent="center" marginTop={5}>
-                  {arrayIcons.map((icon) => (
-                    <img
-                      className={classes.imgIcons}
-                      src={`/${icon}.png`}
-                      width={50}
-                      alt="logo git"
-                    />
-                  ))}
-                </Box>
+                <Social />
               </Box>
             </Box>
           </div>
