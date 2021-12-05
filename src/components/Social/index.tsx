@@ -7,7 +7,7 @@ import { animated } from "react-spring";
 import { use3dEffect } from "use-3d-effect";
 const arrayIcons = ["git", "linkedin", "twitter", "instagram"];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   title: {
     fontSize: 30,
     textAlign: "center",
@@ -38,7 +38,10 @@ const Social: FC = () => {
         }}
         {...mouseHandlers}
       >
-        <Typography className={classes.title}> {`<Follow me>`}</Typography>
+        <Typography className={classes.title} data-test-id="title">
+          {" "}
+          {`<Follow me>`}
+        </Typography>
       </animated.div>
       <Box display="flex" justifyContent="center" marginTop={5}>
         {arrayIcons.map((icon) => (
